@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+    <head>
+        <title>Upload Com Django</title>
+    </head>
+    <body>
+        <div class="upar">
+            <form  method="POST" enctype="multipart/form-data">
+                <input type="text" name="tituloArquivo" placeholder="Titulo">
+                <input type="file" name="uploadArquivo">
+                {% csrf_token %}
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+
+        <div class="mostrar">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>Arquivo Path</th>
+                    <th>Upload data e hora</th>
+                </tr>
+                {% for arquivo in arquivos %}
+                    <tr>
+                        <td>{{ arquivo.id }}</td>
+                        <td>{{ arquivo.titulo }}</td>
+                        <td>{{ arquivo.uploadArquivo.url }}</td>
+                        <td>{{ arquivo.dataDoUpLoad }}</td>
+                    </tr>
+                {% endfor %}    
+            </table>
+        </div>
+      
+    </body>
+</html>
