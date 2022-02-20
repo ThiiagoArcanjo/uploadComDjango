@@ -16,3 +16,5 @@
 5 → Entre na pasta mysite e inicie o servidor →  python manage.py runserver   Ps³ → Se apresentar erro tente reinstalar o Django em ambiente virtual use → pip install django  e  tente rodar o servidor novamente  python manage.py runserver
 
 6 → Abra o navegador, acesse o servidor → 127.0.0.1:8000, insira o titulo, clique browse, escolha o arquivo e clique em upaload.✌🏿
+
+Fonte: https://www.delftstack.com/pt/howto/django/django-upload-file-or-image/
