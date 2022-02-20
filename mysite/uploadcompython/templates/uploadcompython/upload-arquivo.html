@@ -2,35 +2,50 @@
 <html>
     <head>
         <title>Upload Com Django</title>
+        <link rel="stylesheet" href="{% static 'css/uploadcompython.css' %}">
     </head>
     <body>
-        <div class="upar">
-            <form  method="POST" enctype="multipart/form-data">
-                <input type="text" name="tituloArquivo" placeholder="Titulo">
-                <input type="file" name="uploadArquivo">
-                {% csrf_token %}
-                <input type="submit" value="Upload">
-            </form>
-        </div>
+        <div class="conteudo">
+            <div class="cabecalho">
+                <h1>Upload Com Django</h1>
+            </div>
 
-        <div class="mostrar">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Titulo</th>
-                    <th>Arquivo Path</th>
-                    <th>Upload data e hora</th>
-                </tr>
-                {% for arquivo in arquivos %}
-                    <tr>
-                        <td>{{ arquivo.id }}</td>
-                        <td>{{ arquivo.titulo }}</td>
-                        <td>{{ arquivo.uploadArquivo.url }}</td>
-                        <td>{{ arquivo.dataDoUpLoad }}</td>
-                    </tr>
-                {% endfor %}    
-            </table>
+            <div  class="centro">
+                <div class="upar">
+                    <form  method="POST" enctype="multipart/form-data">
+                        <input type="text" name="tituloArquivo" placeholder="Titulo">
+                        <input type="file" name="uploadArquivo">
+                        {% csrf_token %}
+                        <input type="submit" value="Upload">
+                    </form>
+                </div>
+        
+                <div class="mostrar">
+                    <table align="center">
+                        <tr>
+                            <th>ID</th>
+                            <th>Titulo</th>
+                            <th>Arquivo Path</th>
+                            <th>Upload data e hora</th>
+                        </tr>
+                        {% for arquivo in arquivos %}
+                            <tr>
+                                <td>{{ arquivo.id }}</td>
+                                <td>{{ arquivo.titulo }}</td>
+                                <td>{{ arquivo.uploadArquivo.url }}</td>
+                                <td>{{ arquivo.dataDoUpLoad }}</td>
+                            </tr>
+                        {% endfor %}    
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="rodape">
+                <span class="copy">
+                    &copy; Copyright 2019, Desenvolvido por: <a href="https://github.com/ThiiagoArcanjo">Thiago</a>  <a href="https://www.djangoproject.com/">com Django</a>
+                </span>
+            </div>
         </div>
-      
     </body>
 </html>
