@@ -13,8 +13,8 @@
             <div  class="centro">
                 <div class="upar">
                     <form  method="POST" enctype="multipart/form-data">
-                        <input type="text" name="tituloArquivo" placeholder="Titulo">
-                        <input type="file" name="uploadArquivo">
+                        <input type="text" name="tituloArquivo" placeholder="Titulo" required name="tituloArquivo">
+                        <input type="file" name="uploadArquivo"  required name="uploadArquivo">
                         {% csrf_token %}
                         <input type="submit" value="Upload">
                     </form>
