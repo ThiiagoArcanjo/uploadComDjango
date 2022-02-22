@@ -43,3 +43,15 @@ html, body{
     height: 10%;
     
 }
+
+.rodape a{
+    color: chartreuse;
+}
+
+.rodape a:visited{
+    color: chartreuse;
+}
+
+.rodape a:hover{
+    color: cornsilk;
+}
